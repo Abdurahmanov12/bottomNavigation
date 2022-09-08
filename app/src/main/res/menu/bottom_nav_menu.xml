@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ic_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/ic_location"
+        android:icon="@drawable/ic_location"
+        android:title="Location"/>
+
+    <item
+        android:id="@+id/placeHolder"
+        android:title=" "/>
+
+    <item
+        android:id="@+id/ic_legend_toggle"
+        android:icon="@drawable/ic_legend_toggle"
+        android:title="Toggle"/>
+
+    <item
+        android:id="@+id/ic_menu"
+        android:icon="@drawable/ic_menu"
+        android:title="Menu"/>
+</menu>
