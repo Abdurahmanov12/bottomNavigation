@@ -6,11 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.bottomnavigation.ui.AddFragment;
 import com.example.bottomnavigation.ui.HomeFragment;
 import com.example.bottomnavigation.ui.LocationFragment;
-import com.example.bottomnavigation.ui.QuestFragment;
+import com.example.bottomnavigation.ui.MenuFragment;
 import com.example.bottomnavigation.ui.ToggleFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     HomeFragment homeFragment = new HomeFragment();
     LocationFragment locationFragment = new LocationFragment();
     AddFragment addFragment = new AddFragment();
-    QuestFragment questFragment = new QuestFragment();
+    MenuFragment menuFragment = new MenuFragment();
     ToggleFragment toggleFragment = new ToggleFragment();
 
     @Override
@@ -38,27 +39,23 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(v -> getSupportFragmentManager().beginTransaction().replace(R.id.container, addFragment).commit());
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
-
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.ic_home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
-                        return true;
-                    case R.id.ic_location:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, locationFragment).commit();
-                        return true;
-                    case R.id.ic_legend_toggle:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, toggleFragment).commit();
-                        return true;
-                    case R.id.ic_menu:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, questFragment).commit();
-                        return true;
-                }
-
-                return false;
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()){
+                case R.id.ic_home:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+                    return true;
+                case R.id.ic_location:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, locationFragment).commit();
+                    return true;
+                case R.id.ic_legend_toggle:
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, toggleFragment).commit();
+                    return true;
+                case R.id.ic_menu:
+                    menuFragment.show(getSupportFragmentManager(),"BottomSheetDialog"
+                            );
+                    return true;
             }
+            return false;
         });
     }
 }
