@@ -11,7 +11,9 @@
         android:icon="@drawable/ic_location"
         android:title="Локация"/>
 
-
+    <item
+        android:id="@+id/anchor"
+        android:title=""/>
     <item
         android:id="@+id/ic_legend_toggle"
         android:icon="@drawable/ic_legend_toggle"

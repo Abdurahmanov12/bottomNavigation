@@ -17,7 +17,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/white"
+        app:contentInsetStart="0dp"
         app:fabCradleMargin="10dp"
         app:fabCradleRoundedCornerRadius="10dp"
         app:fabCradleVerticalOffset="10dp">
@@ -27,7 +28,7 @@
             android:layout_width="match_parent"
             app:menu="@menu/bottom_nav_menu"
             android:background="@drawable/transparent_background"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"/>
     </com.google.android.material.bottomappbar.BottomAppBar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
