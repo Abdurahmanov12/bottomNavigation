@@ -1,21 +1,16 @@
 package com.example.bottomnavigation;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
 
-import com.example.bottomnavigation.ui.AddFragment;
-import com.example.bottomnavigation.ui.HomeFragment;
-import com.example.bottomnavigation.ui.LocationFragment;
-import com.example.bottomnavigation.ui.MenuFragment;
-import com.example.bottomnavigation.ui.ToggleFragment;
+import com.example.bottomnavigation.ui.Fragment.AddFragment;
+import com.example.bottomnavigation.ui.Fragment.HomeFragment;
+import com.example.bottomnavigation.ui.Fragment.LocationFragment;
+import com.example.bottomnavigation.ui.Fragment.MenuFragment;
+import com.example.bottomnavigation.ui.Fragment.ToggleFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
 
